@@ -41,12 +41,14 @@ namespace plants
             this.startbtn = new System.Windows.Forms.Button();
             this.timelapsetimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.timelapseBox);
             this.groupBox1.Controls.Add(this.label2);
@@ -150,6 +152,16 @@ namespace plants
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(245, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 69);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -180,6 +192,7 @@ namespace plants
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox timelapseBox;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
