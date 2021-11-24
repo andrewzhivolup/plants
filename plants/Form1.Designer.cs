@@ -58,7 +58,7 @@ namespace plants
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(314, 236);
+            this.groupBox1.Size = new System.Drawing.Size(353, 236);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -128,7 +128,7 @@ namespace plants
             // openbtn
             // 
             this.openbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.openbtn.Location = new System.Drawing.Point(161, 27);
+            this.openbtn.Location = new System.Drawing.Point(200, 27);
             this.openbtn.Name = "openbtn";
             this.openbtn.Size = new System.Drawing.Size(150, 50);
             this.openbtn.TabIndex = 5;
@@ -159,7 +159,7 @@ namespace plants
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox2.Location = new System.Drawing.Point(0, 160);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(314, 80);
+            this.groupBox2.Size = new System.Drawing.Size(353, 80);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
