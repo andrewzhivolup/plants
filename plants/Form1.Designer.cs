@@ -31,6 +31,8 @@ namespace plants
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.testbtn = new System.Windows.Forms.Button();
+            this.endtimeBox = new System.Windows.Forms.MaskedTextBox();
             this.starttimeBox = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.timelapseBox = new System.Windows.Forms.TextBox();
@@ -40,13 +42,13 @@ namespace plants
             this.startbtn = new System.Windows.Forms.Button();
             this.timelapsetimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.endtimeBox = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.testbtn);
             this.groupBox1.Controls.Add(this.endtimeBox);
             this.groupBox1.Controls.Add(this.starttimeBox);
             this.groupBox1.Controls.Add(this.label3);
@@ -60,9 +62,28 @@ namespace plants
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // testbtn
+            // 
+            this.testbtn.Location = new System.Drawing.Point(247, 30);
+            this.testbtn.Name = "testbtn";
+            this.testbtn.Size = new System.Drawing.Size(67, 66);
+            this.testbtn.TabIndex = 2;
+            this.testbtn.Text = "тест";
+            this.testbtn.UseVisualStyleBackColor = true;
+            this.testbtn.Click += new System.EventHandler(this.testbtn_Click);
+            // 
+            // endtimeBox
+            // 
+            this.endtimeBox.Location = new System.Drawing.Point(165, 62);
+            this.endtimeBox.Mask = "00:00";
+            this.endtimeBox.Name = "endtimeBox";
+            this.endtimeBox.Size = new System.Drawing.Size(69, 31);
+            this.endtimeBox.TabIndex = 8;
+            this.endtimeBox.Text = "1930";
+            // 
             // starttimeBox
             // 
-            this.starttimeBox.Location = new System.Drawing.Point(169, 32);
+            this.starttimeBox.Location = new System.Drawing.Point(165, 27);
             this.starttimeBox.Mask = "00:00";
             this.starttimeBox.Name = "starttimeBox";
             this.starttimeBox.Size = new System.Drawing.Size(69, 31);
@@ -72,7 +93,7 @@ namespace plants
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 106);
+            this.label3.Location = new System.Drawing.Point(8, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 25);
             this.label3.TabIndex = 7;
@@ -80,7 +101,7 @@ namespace plants
             // 
             // timelapseBox
             // 
-            this.timelapseBox.Location = new System.Drawing.Point(169, 103);
+            this.timelapseBox.Location = new System.Drawing.Point(165, 98);
             this.timelapseBox.Name = "timelapseBox";
             this.timelapseBox.Size = new System.Drawing.Size(69, 31);
             this.timelapseBox.TabIndex = 6;
@@ -89,7 +110,7 @@ namespace plants
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 69);
+            this.label2.Location = new System.Drawing.Point(35, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 25);
             this.label2.TabIndex = 4;
@@ -98,7 +119,7 @@ namespace plants
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 32);
+            this.label1.Location = new System.Drawing.Point(25, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 25);
             this.label1.TabIndex = 3;
@@ -142,15 +163,6 @@ namespace plants
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // endtimeBox
-            // 
-            this.endtimeBox.Location = new System.Drawing.Point(169, 67);
-            this.endtimeBox.Mask = "00:00";
-            this.endtimeBox.Name = "endtimeBox";
-            this.endtimeBox.Size = new System.Drawing.Size(69, 31);
-            this.endtimeBox.TabIndex = 8;
-            this.endtimeBox.Text = "1930";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -181,6 +193,7 @@ namespace plants
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.MaskedTextBox starttimeBox;
         private System.Windows.Forms.MaskedTextBox endtimeBox;
+        private System.Windows.Forms.Button testbtn;
     }
 }
 
