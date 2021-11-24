@@ -14,7 +14,7 @@ namespace plants
         TimeSpan starttime, endtime;//переменная времени начала и окончания записи
         int timelapse; // частота таймлапса
         bool btnisbool = false; // нажата ли клавиша "старт"
-        string path = @"c:\photo"; // путь для сохранения картинок
+        string path = "c:\\photo"; // путь для сохранения картинок
     
         private void startbtn_Click(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace plants
                 startbtn.Text = "Стоп";
                 starttime = TimeSpan.Parse(starttimeBox.Text); //переменная времени начала записи
                 endtime = TimeSpan.Parse(endtimeBox.Text); //переменная времени остановки записи
-                timelapse = Convert.ToInt32(timelapseBox.Text) * 60 * 1000; //частота таймлапса
+                timelapse = Convert.ToInt32(timelapseBox.Text) * 60 * 10; //частота таймлапса
                 starttimeBox.Enabled = false; //
                 endtimeBox.Enabled = false;   // отключаем текстбоксы с параметрами
                 timelapseBox.Enabled = false; //
@@ -64,12 +64,15 @@ namespace plants
 
         private void snapshot() //снимок с камеры
         {
-            //ProcessStartInfo cmd = new ProcessStartInfo();
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe"; //обращение к консоли
-            cmd.StartInfo.Arguments = @"/c ffmpeg.exe -f dshow -i video=""Integrated Camera"" -vframes 1 -strftime 1 ""c:\photo\%Y-%m-%d_%H-%M-%S.png"""; // команда на снимок
-            cmd.StartInfo.CreateNoWindow = true;//скрыть консоль
-            cmd.Start();
+            for (int i = 0; i < 1; i++)
+            {
+                Process cmd = new Process(); //экземпляр процесса
+                cmd.StartInfo.FileName = "cmd.exe"; //обращение к консоли
+                cmd.StartInfo.Arguments = "/c ffmpeg.exe -f dshow -video_device_number" + i + " -i video=\"4000  \"  -vframes 1 -q:v 2  -s 4640x2608  -vf lenscorrection=cx=0.5:cy=0.5:k1=-0.227:k2=-0.022   -strftime 1 \"" + path + "\\%Y-%m-%d_%H-%M-%S.png\""; ;
+                //cmd.StartInfo.Arguments = "/c ffmpeg.exe -f dshow -i video=\"Integrated Camera\" -vframes 1 -strftime 1 \"" + path + "\\%Y-%m-%d_%H-%M-%S.png\""; // команда на снимок
+                cmd.StartInfo.CreateNoWindow = true;//скрыть консоль
+                cmd.Start();
+            }   
         }
         public TimeSpan GetTime() //получение текущего времени времени
         {
