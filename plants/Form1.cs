@@ -24,7 +24,7 @@ namespace plants
                 startbtn.Text = "Стоп";
                 starttime = TimeSpan.Parse(starttimeBox.Text); //переменная времени начала записи
                 endtime = TimeSpan.Parse(endtimeBox.Text); //переменная времени остановки записи
-                timelapse = Convert.ToInt32(timelapseBox.Text) * 60 * 10; //частота таймлапса
+                timelapse = Convert.ToInt32(timelapseBox.Text) * 60 * 1000; //частота таймлапса
                 starttimeBox.Enabled = false; //
                 endtimeBox.Enabled = false;   // отключаем текстбоксы с параметрами
                 timelapseBox.Enabled = false; //
